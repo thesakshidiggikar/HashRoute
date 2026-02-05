@@ -13,6 +13,24 @@ The project follows a layered backend architecture reviewed and approved by seni
 - **Data Layer**: Manages persistence via SQLAlchemy with optimized B-Tree indexing on short codes.
 - **Utility Layer**: Stateless helper functions for encoding and hash generation.
 
+## Project Structure
+```text
+HashRoute/
+├── app/
+│   ├── api/                # Routers and endpoints
+│   ├── models/             # Database ORM models
+│   ├── schemas/            # Pydantic request/response schemas
+│   ├── services/           # Core business logic
+│   ├── utils/              # Helper utilities
+│   ├── database.py         # Database connection and session management
+│   └── main.py             # Application entry point
+├── assets/                 # Static assets and screenshots
+├── docs/                   # System design and documentation
+├── tests/                  # Unit and integration tests
+├── requirements.txt        # Project dependencies
+└── verify_api.py           # End-to-end verification script
+```
+
 ## How to Run Locally
 
 ### Prerequisites
