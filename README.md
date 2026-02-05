@@ -22,11 +22,12 @@ HashRoute/
 │   ├── schemas/            # Pydantic request/response schemas
 │   ├── services/           # Core business logic
 │   ├── utils/              # Helper utilities
+│   ├── config.py           # Centralized settings and environment config
 │   ├── database.py         # Database connection and session management
 │   └── main.py             # Application entry point
 ├── assets/                 # Static assets and screenshots
-├── docs/                   # System design and documentation
-├── tests/                  # Unit and integration tests
+├── docs/                   # System design, architecture, and walkthrough
+├── tests/                  # Automated test suite (pytest)
 ├── requirements.txt        # Project dependencies
 └── verify_api.py           # End-to-end verification script
 ```
@@ -34,7 +35,7 @@ HashRoute/
 ## How to Run Locally
 
 ### Prerequisites
-- Python 3.9 or higher
+- Python 3.10+
 - SQLite (default) or PostgreSQL/MySQL
 
 ### Setup
@@ -48,7 +49,7 @@ HashRoute/
    ```powershell
    pip install -r requirements.txt
    ```
-4. Configure environment variables (optional, default provided):
+4. Configure environment variables (optional):
    ```powershell
    copy .env.example .env
    ```
@@ -58,6 +59,26 @@ Start the production-ready server using Uvicorn:
 ```powershell
 uvicorn app.main:app --reload
 ```
+
+## Testing & Verification
+
+### Automated Tests
+Run the professional test suite using `pytest`:
+```powershell
+pytest tests/
+```
+
+### End-to-End Verification
+A specialized script is provided to validate the system end-to-end:
+```powershell
+python verify_api.py
+```
+This script validates:
+1. Service health and connectivity.
+2. Successful URL shortening and storage.
+3. Proper HTTP 307 Redirection.
+4. Idempotency (Same URL returns the same short code).
+5. 404 handling for non-existent routes.
 
 ## API Demo
 
@@ -80,15 +101,3 @@ The system returns a unique 7-character short code and the full resolution URL.
 Navigating to the short URL automatically redirects the client to the original destination while incrementing analytics.
 
 ![Redirect Flow](assets/screenshots/redirect_flow.png)
-
-## Verification
-A specialized verification script is provided to validate the system end-to-end:
-```powershell
-python verify_api.py
-```
-This script validates:
-1. Service health and connectivity.
-2. Successful URL shortening and storage.
-3. Proper HTTP 307 Redirection.
-4. Idempotency (Same URL returns the same short code).
-5. 404 handling for non-existent routes.
