@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.responses import RedirectResponse
 from sqlalchemy.orm import Session
 from ..database import get_db
-from .. import schemas
+from ..schemas import url as schemas
 from ..services.url_service import URLService
 from datetime import datetime
 

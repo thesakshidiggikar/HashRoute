@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import or_
 from datetime import datetime
-from .. import models, schemas
+from ..models import url as models
+from ..schemas import url as schemas
 from ..utils.hash import generate_short_code
 
 class URLService:
