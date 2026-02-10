@@ -3,10 +3,8 @@ name: Deploy Website to GitHub Pages
 on:
   push:
     branches:
-      - main # Set this to your default branch
-    paths:
-      - 'website/**'
-      - '.github/workflows/deploy.yml'
+      - main
+  workflow_dispatch: # Allow manual triggering
 
 permissions:
   contents: read
