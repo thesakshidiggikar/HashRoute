@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HashRoute | High-Performance URL Shortener API</title>
+  <meta name="description"
+    content="Documentation and engineering showcase for HashRoute, a production-grade URL shortener built with FastAPI and SQLAlchemy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero container">
+      <div class="tagline">Backend Engineering Project</div>
+      <h1>HashRoute</h1>
+      <p>A high-performance, layered URL Shortener API focusing on scalability, reliability, and clean architecture
+        principles.</p>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview" class="container reveal">
+      <h2>Project Overview</h2>
+      <p>HashRoute was engineered to solve the challenge of mapping long, complex URLs to short, manageable identifiers
+        at scale. The system prioritizes <strong>correctness</strong>, <strong>idempotency</strong>, and <strong>low
+          latency</strong>.</p>
+      <div class="arch-grid">
+        <div class="arch-card">
+          <h3>Scalability</h3>
+          <p>Designed with a stateless API layer and indexed database schema to handle high-concurrency redirection
+            traffic.</p>
+        </div>
+        <div class="arch-card">
+          <h3>Reliability</h3>
+          <p>Collision-resistant hashing and robust error handling ensure that every short link works every time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section id="architecture" class="container reveal">
+      <h2>System Architecture</h2>
+      <p>The system follows a strict layered pattern to ensure separation of concerns and maintainability.</p>
+
+      <div class="arch-grid">
+        <div class="arch-card">
+          <h3>API Layer</h3>
+          <p>FastAPI handles routing, request validation via Pydantic, and dependency injection for service access.</p>
+        </div>
+        <div class="arch-card">
+          <h3>Service Layer</h3>
+          <p>Contains core business logic, including the hashing strategy and collision retry mechanisms.</p>
+        </div>
+        <div class="arch-card">
+          <h3>Data Layer</h3>
+          <p>SQLAlchemy ORM manages persistence with optimized indexes on short codes for constant-time lookups.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Flow -->
+    <section id="flow" class="container reveal">
+      <h2>Request → Redirect Flow</h2>
+      <div class="code-header"><span>URL Shortening Lifecycle</span></div>
+      <pre><code>1. Client POSTs long URL
+2. API validates URL structure
+3. Service generates Base62 hash of URL
+4. Collision check in Database
+5. Result persisted & ID returned
+6. Future GET requests redirect via HTTP 307</code></pre>
+      <p>Using <strong>HTTP 307 (Temporary Redirect)</strong> ensures that the client eventually hits the backend again
+        if rules change, while preserving the request method.</p>
+    </section>
+
+    <!-- API Demonstration -->
+    <section id="demo" class="container reveal">
+      <h2>API Demonstration</h2>
+      <div class="code-header"><span>POST /shorten</span></div>
+      <pre><code>// Request
+{
+  "original_url": "https://docs.fastapi.tiangolo.com/..."
+}
+
+// Response (201 Created)
+{
+  "short_code": "x7k9p2",
+  "short_url": "http://hr.io/x7k9p2",
+  "created_at": "2024-02-10T15:30:00Z"
+}</code></pre>
+      <p>The API is fully documented with Swagger UI, providing interactive testing capabilities for developers.</p>
+    </section>
+
+    <!-- Testing & Verification -->
+    <section id="testing" class="container reveal">
+      <h2>Testing & Verification</h2>
+      <div class="arch-grid">
+        <div class="arch-card">
+          <h3>Automated Suites</h3>
+          <p>Comprehensive tests covering shortening logic, redirection, and edge cases like expired links or duplicate
+            URLs.</p>
+          <div class="code-header"><span>pytest output</span></div>
+          <pre><code>PASSED tests/test_shortener.py::test_create_url
+PASSED tests/test_shortener.py::test_redirect_success
+PASSED tests/test_shortener.py::test_idempotency</code></pre>
+        </div>
+      </div>
+    </section>
+    <!-- Interactive Demo Mockup -->
+    <section id="interactive-demo" class="container reveal">
+      <h2>Interactive Concept Demo</h2>
+      <p>Experience the URL shortening lifecycle in real-time. This demo simulates the backend process without making
+        actual API calls.</p>
+
+      <div class="demo-box">
+        <div class="input-group">
+          <input type="text" id="target-url"
+            placeholder="Enter long URL (e.g., https://github.com/thesakshidiggikar/HashRoute)" />
+          <button id="shorten-btn">Shorten</button>
+        </div>
+
+        <div id="demo-status" class="demo-status">
+          <div class="status-step" id="step-validate"><span>1</span> Validating Architecture</div>
+          <div class="status-step" id="step-hash"><span>2</span> Generating Base62 Hash</div>
+          <div class="status-step" id="step-collision"><span>3</span> Collision Check</div>
+          <div class="status-step" id="step-persist"><span>4</span> Simulating Persistence</div>
+        </div>
+
+        <div id="demo-result" class="demo-result hidden">
+          <div class="code-header"><span>Generated HashRoute Link</span></div>
+          <pre><code id="result-link">http://hr.io/s7d2k9</code></pre>
+          <div class="demo-actions">
+            <button id="copy-btn" class="btn-small">Copy Link</button>
+            <button id="reset-demo" class="btn-small secondary">Try Another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 HashRoute . Engineered for Performance.</p>
+      <div class="disclaimer">
+        This is a documentation-only project website. The backend API is not executed from this site.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
