@@ -16,10 +16,6 @@
   <p><em>Premium Backend Documentation & Interactive Showcase</em></p>
 </div>
 
-> [!IMPORTANT]  
-> **To fix the view (Action Required):**  
-> In your screenshot 1, you need to click that **"Deploy from a branch"** dropdown and select **"GitHub Actions"**. Then push your code once more!
-
 ---
 
 ## 📖 Introduction
