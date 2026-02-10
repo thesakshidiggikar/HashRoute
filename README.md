@@ -2,12 +2,12 @@
   <h1>🚀 HashRoute</h1>
   <p><strong>High-Performance URL Shortener API</strong></p>
 
-  [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
-  [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy)](https://www.sqlalchemy.org)
-  [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
-  [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+  <a href="https://fastapi.tiangolo.com"><img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI"></a>
+  <a href="https://www.sqlalchemy.org"><img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy" alt="SQLAlchemy"></a>
+  <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License"></a>
 
-  <br />
+  <br><br>
   
   <a href="https://thesakshidiggikar.github.io/HashRoute/">
     <img src="https://img.shields.io/badge/View_Live_Showcase-🚀-3b82f6?style=for-the-badge&logo=github" alt="Live Demo" height="40">
@@ -17,10 +17,8 @@
 </div>
 
 > [!IMPORTANT]  
-> **To see the Premium Dark Mode site (instead of this simple view):**  
-> 1. Go to your repo **Settings** > **Pages**.  
-> 2. Under **Build and deployment** > **Source**, change from "Deploy from a branch" to **"GitHub Actions"**.  
-> 3. Push your code! The automated workflow will then build and host the high-end version.
+> **To fix the view (Action Required):**  
+> In your screenshot 1, you need to click that **"Deploy from a branch"** dropdown and select **"GitHub Actions"**. Then push your code once more!
 
 ---
 
