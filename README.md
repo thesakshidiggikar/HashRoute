@@ -16,6 +16,12 @@
   <p><em>Premium Backend Documentation & Interactive Showcase</em></p>
 </div>
 
+> [!IMPORTANT]  
+> **To see the Premium Dark Mode site (instead of this simple view):**  
+> 1. Go to your repo **Settings** > **Pages**.  
+> 2. Under **Build and deployment** > **Source**, change from "Deploy from a branch" to **"GitHub Actions"**.  
+> 3. Push your code! The automated workflow will then build and host the high-end version.
+
 ---
 
 ## 📖 Introduction
