@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 HashRoute</h1>
+  <h1>HashRoute</h1>
   <p><strong>High-Performance URL Shortener API</strong></p>
 
   <a href="https://fastapi.tiangolo.com"><img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI"></a>
@@ -10,7 +10,7 @@
   <br><br>
   
   <a href="https://thesakshidiggikar.github.io/HashRoute/">
-    <img src="https://img.shields.io/badge/View_Live_Showcase-🚀-3b82f6?style=for-the-badge&logo=github" alt="Live Demo" height="40">
+    <img src="https://img.shields.io/badge/View_Live_Showcase-DEMO-3b82f6?style=for-the-badge&logo=github" alt="Live Demo" height="40">
   </a>
 
   <p><em>Premium Backend Documentation & Interactive Showcase</em></p>
@@ -18,7 +18,7 @@
 
 ---
 
-## 📖 Introduction
+## Introduction
 
 **HashRoute** is a production-grade URL shortener backend built with **FastAPI** and **SQLAlchemy**. It implements an industry-standard layered architecture focusing on **scalability**, **maintainability**, and **clean separation of concerns**.
 
@@ -27,7 +27,7 @@
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 HashRoute follows a strict layered pattern to ensure business logic is decoupled from external interfaces.
 
@@ -47,7 +47,7 @@ graph TD
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 HashRoute/
@@ -67,7 +67,7 @@ HashRoute/
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Setup
 ```bash
@@ -90,7 +90,7 @@ uvicorn app.main:app --reload
 
 ---
 
-## 🧪 Verification & API Demo
+## Verification & API Demo
 
 ### Automated Testing
 ```bash
@@ -107,7 +107,7 @@ The `verify_api.py` script validates the following:
 
 ---
 
-## 🎨 Interactive Showcase
+## Interactive Showcase
 For a visually polished experience with **Dark Mode** and **Interactive Simulations**, visit the [HashRoute Project Website](https://thesakshidiggikar.github.io/HashRoute/).
 
 - **Dark Theme Interface** (Vite + Vanilla CSS)
